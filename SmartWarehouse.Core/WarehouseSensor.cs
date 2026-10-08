@@ -1,14 +1,12 @@
-﻿
-
-namespace SmartWarehouse.Core;
+﻿namespace SmartWarehouse.Core;
 
 public class WarehouseSensor
 {
     // Properties for the warehouse sensor object
     public string SensorId {get; private set;}
-    private string LocationTag;
+    public string LocationTag {get; private set;}
     private double CurrentTemperature;
-    private bool IsActive;
+    public bool IsActive {get; private set;}
     public bool IsAlertTriggered {get; private set;}
     private double CriticalThresholdCelcius;
 
@@ -18,7 +16,7 @@ public class WarehouseSensor
         this.SensorId = SensorId;
         this.LocationTag = LocationTag;
         this.CriticalThresholdCelcius = CriticalThresholdCelcius;
-        if (string.IsNullOrEmpty(SensorId) || string.IsNullOrEmpty(LocationTag))
+        if (string.IsNullOrEmpty(SensorId) || string.IsNullOrEmpty(LocationTag) || string.IsNullOrWhiteSpace(SensorId) || string.IsNullOrWhiteSpace(LocationTag))
         {
             throw new ArgumentException("SensorId and LocationTag cannot be null or empty.");
         }

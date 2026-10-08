@@ -16,4 +16,7 @@
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SmartWarehouse.Core\SmartWarehouse.Core.csproj" />
+  </ItemGroup>
 </Project>
